@@ -1,9 +1,9 @@
 syntax on
-set background=dark
+"set background=dark
 " solarized options 
-colorscheme NeoSolarized
+"colorscheme NeoSolarized
 
-hi Normal guibg=NONE ctermbg=NONE
+"hi Normal guibg=NONE ctermbg=NONE
 
 if has("termguicolors")
     " enable true color
@@ -23,7 +23,7 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 
 "inoremap jj <Esc>
  
-set guifont=Source\ Code\ Pro\ for\ Powerline\ :h18
+"set guifont=Source\ Code\ Pro\ for\ Powerline\ :h18
 
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold

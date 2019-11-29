@@ -1,7 +1,7 @@
 #### setup neovim
 TOP=.
 setup: setupNeovim
-setupNeovim: setupDir installPlugManager installNeoConfig
+setupNeovim: setupDir installPlugManager installNeoConfig installSilverSearch installRipgrep
 setupDir: 
 	@echo $@ 
 	@if [ ! -d ~/.config ]; then mkdir ~/.config; fi
@@ -15,6 +15,15 @@ installNeoConfig:
 	@echo $@ 
 	@cp -r $(TOP)/.config/nvim ~/.config/
 
+installSilverSearch:
+	@echo $@ 
+	@sudo yum install  -y the_silver_searcher
+
+
+installRipgrep:
+	@echo $@ 
+	@yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo
+	@sudo yum install -y ripgrep
 
 
 
