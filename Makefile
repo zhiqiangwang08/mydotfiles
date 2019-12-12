@@ -1,5 +1,7 @@
 #### setup neovim
 TOP=.
+TOPDIR=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
+VIMCON=$(TOPDIR)/neovim/.config/nvim
 setup: setupNeovim
 setupNeovim: setupDir installPlugManager installNeoConfig installSilverSearch installRipgrep
 setupDir: 
@@ -9,11 +11,13 @@ setupDir:
 
 installPlugManager: 
 	@echo $@ 
-	@curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	@curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
+#	@cp -r $(TOP)/.config/nvim ~/.config/
+#
 installNeoConfig: 
 	@echo $@ 
-	@cp -r $(TOP)/.config/nvim ~/.config/
+	@ln -s -f $(VIMCON) ~/.config/
 
 installSilverSearch:
 	@echo $@ 
@@ -25,7 +29,8 @@ installRipgrep:
 	@yum-config-manager --add-repo=https://copr.fedorainfracloud.org/coprs/carlwgeorge/ripgrep/repo/epel-7/carlwgeorge-ripgrep-epel-7.repo
 	@sudo yum install -y ripgrep
 
-
+pwd:
+	@echo ${TOPDIR}
 
 
 
