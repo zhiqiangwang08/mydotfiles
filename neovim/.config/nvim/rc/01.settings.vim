@@ -46,7 +46,7 @@ set fencs=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
 "显示行号  
 set number
 "Show related row numbers
-set relativenumber
+set norelativenumber
 
 "settings for backspace
 set backspace=2
@@ -104,3 +104,12 @@ au TextChangedI * GitGutter
 
 " search word under cursor
 noremap <Leader>s :Rg <cword><cr>
+" quick fix window navigation
+nnoremap <Leader>qf :cn <CR>
+nnoremap <Leader>qb :cp <CR>
+
+" set diffoption for fugitive vim git
+" https://github.com/tpope/vim-fugitive/issues/523
+" https://github.com/tpope/vim-fugitive/issues/508
+" https://github.com/tpope/vim-fugitive/issues/510
+set diffopt+=vertical
