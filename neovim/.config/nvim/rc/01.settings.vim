@@ -57,6 +57,8 @@ set ic
 
 " tab宽度  
 set tabstop=2  
+set shiftwidth=2
+set expandtab
 set cindent shiftwidth=2  
 set autoindent shiftwidth=2 
 
@@ -102,11 +104,12 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 set updatetime=100
 au TextChangedI * GitGutter
 
-" search word under cursor
-noremap <Leader>s :Rg <cword><cr>
 " quick fix window navigation
-nnoremap <Leader>qf :cn <CR>
-nnoremap <Leader>qb :cp <CR>
+"nnoremap <Leader>qf :cn <CR>
+"nnoremap <Leader>qb :cp <CR>
+
+nnoremap  <Leader>j :cn <CR>
+nnoremap  <Leader>k :cp <CR>
 
 " set diffoption for fugitive vim git
 " https://github.com/tpope/vim-fugitive/issues/523
