@@ -3,7 +3,7 @@ TOP=.
 TOPDIR=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 VIMCON=$(TOPDIR)/neovim/.config/nvim
 setup: setupNeovim
-setupNeovim: setupDir installPlugManager installNeoConfig installSilverSearch installRipgrep
+setupNeovim: setupDir installNeoConfig installPlugManager installSilverSearch installRipgrep
 setupDir: 
 	@echo $@ 
 	@if [ ! -d ~/.config ]; then mkdir ~/.config; fi
