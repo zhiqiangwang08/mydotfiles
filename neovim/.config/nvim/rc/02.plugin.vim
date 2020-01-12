@@ -32,11 +32,15 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
 "Plugins for golang
-Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries'}
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
+"Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoUpdateBinaries'}
+"Plug 'Shougo/neosnippet.vim'
+"Plug 'Shougo/neosnippet-snippets'
 
 "Plugin(s) for Rust
-Plug 'rust-lang/rust.vim'
+"Plug 'rust-lang/rust.vim'
+
+"Plugins for gdb
+Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
+
 
 call plug#end()
