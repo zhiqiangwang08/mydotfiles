@@ -3,7 +3,7 @@ TOP=.
 TOPDIR=$(dir $(realpath $(firstword $(MAKEFILE_LIST))))
 VIMCON=$(TOPDIR)/neovim/.config/nvim
 setup: setupNeovim
-setupNeovim: setupDir installNeoConfig installPlugManager installSilverSearch installRipgrep
+setupNeovim: setupDir installNeoConfig installPlugManager installSilverSearch installRipgrep installneovim
 setupDir: 
 	@echo $@ 
 	@if [ ! -d ~/.config ]; then mkdir ~/.config; fi
@@ -32,6 +32,14 @@ installRipgrep:
 pwd:
 	@echo ${TOPDIR}
 
+installneovim:
+	@echo $@
+	@curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+	@chmod a+x nvim.appimage
+	@mv nvim.appimage /usr/bin/nvim
+#installneovim:
+#	@echo $@
+#	@yum install -y neovim
 
 
 
